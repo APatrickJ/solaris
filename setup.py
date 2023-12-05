@@ -53,13 +53,13 @@ else:
         "PyYAML>=5.4",
         "rasterio>=1.0.23",
         "rio-cogeo>=3.0.2",
-        "requests==2.22.0",
+        "requests>=2.22.0",
         "rtree>=0.9.3",
         "scikit-image>=0.16.2",
         "scipy>=1.3.2",
         "shapely>=1.7.1dev",
         "tqdm>=4.40.0",
-        "urllib3<1.26",
+        "urllib3>=2.0.2",
     ]
 
 
