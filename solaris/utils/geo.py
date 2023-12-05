@@ -21,7 +21,7 @@ from shapely.geometry import (
     shape,
 )
 from shapely.geometry.collection import GeometryCollection
-from shapely.ops import cascaded_union
+from shapely.ops import unary_union
 from shapely.wkt import loads
 
 from .core import (
@@ -496,12 +496,12 @@ def geometries_internal_intersection(polygons):
     output_polys = []
     _ = intersect_lists.apply(
         lambda x: output_polys.append(
-            gs[x["gs_idx"]].intersection(cascaded_union(gs[x["intersectors"]]))
+            gs[x["gs_idx"]].intersection(unary_union(gs[x["intersectors"]]))
         ),
         axis=1,
     )
     # we then generate the union of all of these intersections and return it.
-    return cascaded_union(output_polys)
+    return unary_union(output_polys)
 
 
 def split_multi_geometries(gdf, obj_id_col=None, group_col=None, geom_col="geometry"):
