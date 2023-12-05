@@ -54,7 +54,7 @@ else:
         "rasterio>=1.0.23",
         "rio-cogeo>=3.0.2",
         "requests>=2.22.0",
-        "rtree>=1.1.0",
+        "rtree==1.1.0",
         "scikit-image>=0.16.2",
         "scipy>=1.3.2",
         "shapely>=1.7.1dev",
